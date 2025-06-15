@@ -51,9 +51,10 @@ class Product(models.Model):
         related_name="products",
         to="Category",
     )
-    price = models.FloatField(
+    purchase_price = models.DecimalField(
         verbose_name="Цена",
-        help_text="Укажите стоимость продукта",
+        max_digits=10,
+        decimal_places=2,
     )
     created_at = models.DateField(
         auto_now_add=True,
